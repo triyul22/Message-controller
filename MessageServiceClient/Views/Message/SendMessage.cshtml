@@ -1,0 +1,36 @@
+﻿@*
+    
+*@
+@{
+    Layout = null;
+}
+
+@model MessageServiceClient.ViewModels.MessageViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width-device-width" />
+    <title>Send message</title>
+</head>
+<body>
+   
+    @using (Html.BeginForm("Send"))
+    {
+    <table>
+        <tr>
+            <td>@Html.LabelFor(model => model.message.Id)</td>
+            <td>@Html.TextBoxFor(model => model.message.Id)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(model => model.message.Text)</td>
+            <td>@Html.TextBoxFor(model => model.message.Text)</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td><input type="submit" value="Send" /></td>
+        </tr>
+    </table>
+    }
+</body>
+</html>
